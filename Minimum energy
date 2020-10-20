@@ -1,0 +1,39 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner scn=new Scanner(System.in);
+		int t=scn.nextInt();
+		for(int q=0;q<t;q++){
+		    int n=scn.nextInt();
+		    int[] arr=new int[n];
+		    
+		    for(int i=0;i<n;i++){
+		        arr[i]=scn.nextInt();
+		    }
+		    
+		    int curr_energy=0;
+		    int i_energy=0;
+		    boolean flag=false;
+		    
+		    for(int i=0;i<n;i++){
+		        curr_energy+=arr[i];
+		        if(curr_energy<=0){
+		            i_energy+= Math.abs(curr_energy)+1;
+		            curr_energy=1;
+		            flag=true;
+		        }
+		    }
+		    
+		    if(flag==true){
+		        System.out.println(i_energy);
+		    }else{
+		        System.out.println(1);
+		    }
+		}
+	}
+}
